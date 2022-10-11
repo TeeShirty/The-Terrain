@@ -102,18 +102,12 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //GetSingleton();
-
         if(bShouldLoad)
         {
             StateManager.Load(Application.persistentDataPath + "/SaveGame.xml");
 
             bShouldLoad = false;
         }
-
-        //PlayerPrefs.SetString("Name", "Jim");
-        //PlayerPrefs.SetFloat("Volume", 0.5f);
-        //PlayerPrefs.Save();
     }
 
 
@@ -155,8 +149,6 @@ public class GameManager : MonoBehaviour
 //#else
 //        Application.Quit()
 //#endif
-
-        
     }
 
 
@@ -184,19 +176,4 @@ public class GameManager : MonoBehaviour
 
         //Restart game
     }
-
-
-    /*
-    public void GetSingleton()
-    {
-        if (instance == true)
-        {
-            Destroy(gameObject);
-        }
-        else
-        {
-            instance = this;
-            DontDestroyOnLoad(this);
-        }
-    }*/
 }

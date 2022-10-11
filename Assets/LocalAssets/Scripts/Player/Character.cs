@@ -142,25 +142,13 @@ public class Character : MonoBehaviour
 
         runningAudioSource = gameObject.AddComponent<AudioSource>();
         runningAudioSource.clip = runningSFX;
+
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     // Update is called once per frame
     void Update()
     {
-        //if (isAlive)
-        //{
-        //    controller.enabled = true;
-            
-        //    GetComponent<MouseLook>().enabled = true;
-            
-        //}
-        //else if (!isAlive)
-        //{
-        //    speed = 0.0f;
-            
-        //    GetComponent<MouseLook>().enabled = false;
-        //}
-
         switch (type)
         {
             case ControllerType.SimpleMove:
@@ -185,7 +173,7 @@ public class Character : MonoBehaviour
                     //else
                         //moveDirection.y = -controller.stepOffset / Time.deltaTime;
 
-                    if(Input.GetKeyDown(KeyCode.LeftShift))
+                    if(Input.GetKeyDown(KeyCode.LeftShift) && moveDirection.magnitude != 0.0f)
                     {
                         
                         isRunning = true;
